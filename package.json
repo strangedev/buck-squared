@@ -1,0 +1,10 @@
+{
+  "name": "buck-squared",
+  "version": "1.0.0",
+  "description": "A library for drawing some visualization",
+  "main": "index.js",
+  "repository": "https://github.com/strangedev/buck-squared.git",
+  "author": "Noah Hummel",
+  "license": "MIT",
+  "private": false
+}
