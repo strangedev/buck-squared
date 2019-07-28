@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buckets Squared Demo</title>
+    <script src="dist/Buck2.js"></script>
+  </head>
+  <body>
+    <div id="draw" style="height: 600px"></div>
+    <script>
+      /*
+      console.log(Buck2);
+      var draw = Buck2.SVG("draw");
+      var x = 0;
+      var y = 0;
+      var width = 100;
+      var buckets2_cfg = [
+        { label: "Poor student", color: "#f5a442" },
+        { label: "Regular student", color: "#fff07a" },
+        { label: "Good student", color: "#7aff92" }
+      ];
+
+      var bucket = new Buck2.Bucket(
+        draw,
+        Buck2.exampleConfig.Bucket,
+        {
+          x,
+          y,
+          width,
+          boxSize: 10,
+          boxSpacing: 3,
+          rowSkip: false
+        },
+        Buck2.exampleData
+      );
+      bucket.draw();
+      bucket.moveTo({ y: 10 });
+      bucket.draw();
+      */
+      var data = Buck2.generateSampleData(
+        1000,
+        Buck2.exampleConfig.Buckets,
+        Buck2.exampleConfig.Bucket
+      );
+      console.log(data);
+
+      var buckets = new Buck2.Buckets(
+        "draw",
+        Buck2.exampleConfig.Buckets,
+        Buck2.exampleConfig.Bucket,
+        {
+          boxSize: 8,
+          width: 600,
+          bucketSpacing: 10,
+          fontSize: 11,
+          highlighted: 2
+        },
+        data
+      );
+      buckets.moveTo({ x: 100 });
+      buckets.draw();
+    </script>
+  </body>
+</html>

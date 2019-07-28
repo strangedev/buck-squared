@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buckets Squared Demo</title>
+    <script src="dist/Buck2.js"></script>
+  </head>
+  <body>
+    <div id="draw" style="height: 600px"></div>
+    <script>
+      var data = Buck2.generateSampleData(
+        100,
+        Buck2.exampleConfig.Buckets,
+        Buck2.exampleConfig.Bucket
+      );
+      var draw = Buck2.SVG("draw");
+      var bucket = new Buck2.Bucket(
+        draw,
+        Buck2.exampleConfig.Bucket,
+        {
+          x: 0,
+          y: 0,
+          width: 100,
+          boxSize: 10,
+          boxSpacing: 3,
+          rowSkip: false
+        },
+        data
+      );
+      bucket.moveTo({ y: 10 });
+      bucket.draw();
+    </script>
+  </body>
+</html>

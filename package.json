@@ -2,9 +2,17 @@
   "name": "buck-squared",
   "version": "1.0.0",
   "description": "A library for drawing some visualization",
-  "main": "index.js",
+  "main": "dist/Buck2.js",
   "repository": "https://github.com/strangedev/buck-squared.git",
   "author": "Noah Hummel",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "ramda": "^0.26.1",
+    "svg.js": "^2.7.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
+  }
 }
