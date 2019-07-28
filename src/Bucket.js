@@ -2,7 +2,23 @@ const R = require("ramda");
 
 const { Movable } = require("./Movable");
 
+/**
+ * A single bucket of data points that themselves are sorted by some
+ * other criterium.
+ */
 class Bucket extends Movable {
+  /**
+   *
+   * @param {Any} draw A svg.js drawing surface.
+   * @param {*} bucketConfig A bucket configuration telling the renderer how to group the data points and what color each group has.
+   * @param {Number} x [optional] The x translation of the Bucket in px.
+   * @param {Number} y [optional] The x translation of the Bucket in px.
+   * @param {Number} width [optional] The width of the Bucket in px.
+   * @param {Number} boxSize [optional] The length of one side of a single box in px.
+   * @param {Number} boxSpacing [optional] The space between two boxes in px.
+   * @param {Boolean} rowSkip [optional] If rowSkip true, a group will always start on a new row.
+   * @param {Array<Record<String, Number>>} data An Array of data points, where `bucketConfig.indexProperty` denotes which group in `bucketConfig.buckets` a point belongs to.
+   */
   constructor(
     draw,
     bucketConfig,
@@ -19,10 +35,16 @@ class Bucket extends Movable {
     this._data = data;
   }
 
+  /**
+   * Helper to determine the number of boxes in a row of the Bucket.
+   */
   _boxesPerRow() {
     return Math.floor(this._width / (this._boxSize + this._boxSpacing));
   }
 
+  /**
+   * Inherited from Drawable.
+   */
   draw() {
     this.clear();
     let iRow = 0;
