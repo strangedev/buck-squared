@@ -93,7 +93,7 @@ class Buckets extends Movable {
       iBucket < this._bucketsConfig.buckets.length;
       iBucket++
     ) {
-      const x = iBucket * (bucketWidth + this._bucketSpacing);
+      const x = this._x + iBucket * (bucketWidth + this._bucketSpacing);
       const { label } = this._bucketsConfig.buckets[iBucket];
       // Draw heading
       if (this._headings) {
